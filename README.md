@@ -92,7 +92,13 @@ Before AHP financial ratio data of all the suppliers need to be transformed, whi
 ## Sentiment Analysis for ABC International<a name="sentiment-analysis"></a>
 
 ![SentimentAnalysis](https://github.com/vaibhavmaurya/abc-case-study/blob/master/images/Sentiment.png)
+
+ 1. Trigger Lambda function to extract text from news feed API.
+ 2. Push raw data to S3 bucket, which triggers another lambda function. This lambda function interacts with Amazon Comprehend and extract sentiments information.
+ 3. Sentiment information is pushed to S3 bucket and Simple Notification Service to trigger email or any data driven tasks.
+
  
+
 ### News Feed API<a name="news-feed-api"></a>
 Following APIs can be used for news extraction for a given query.
    - [News API](https://newsapi.org/s/google-news-api) can be used to extract news using rest API
@@ -110,3 +116,6 @@ As per the above architecture diagram. The extracted text can be analyzed using 
 	 
  - Extract sentiment from the following API.
  [Detect Sentiment](https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html)
+
+	
+
