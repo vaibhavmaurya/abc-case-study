@@ -14,6 +14,8 @@
     - [Web Crawler <a name="web-crawler"></a>](#web-crawler)
     - [Suppliers Profiling and Scoring<a name="profiling-and-scoring"></a>](#suppliers-profiling-and-scoring)
   - [Sentiment Analysis for ABC International<a name="sentiment-analysis"></a>](#sentiment-analysis-for-abc-international)
+    - [News Feed API<a name="news-feed-api"></a>](#news-feed-api)
+    - [Sentiment Analysis<a name="sentiment-analysis"></a>](#sentiment-analysis)
 
 # Case Study: ABC International <a name="case-study"></a>
 
@@ -89,7 +91,22 @@ Before AHP financial ratio data of all the suppliers need to be transformed, whi
 
 ## Sentiment Analysis for ABC International<a name="sentiment-analysis"></a>
 
-
+![SentimentAnalysis](https://github.com/vaibhavmaurya/abc-case-study/blob/master/images/Sentiment.png)
  
+### News Feed API<a name="news-feed-api"></a>
+Following APIs can be used for news extraction for a given query.
+   - [News API](https://newsapi.org/s/google-news-api) can be used to extract news using rest API
+   - [Google News API](https://pypi.org/project/GoogleNews/) python library
+    
+### Sentiment Analysis<a name="sentiment-analysis"></a>
 
+As per the above architecture diagram. The extracted text can be analyzed using AWS Comprehend and results can be pushed to S3 bucket.
 
+ - Detect entities with predefined keywords. To learn specific keywords use following API
+	[Create Entitiy Recognizer](https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEntityRecognizer.html)
+	
+ - Find language of the text.
+	 [Dominant Language Detetction](https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html)
+	 
+ - Extract sentiment from the following API.
+ [Detect Sentiment](https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html)
