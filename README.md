@@ -2,33 +2,58 @@
 # Case Study: ABC International
 
 ## Table of contents
-- [Case Study: ABC International](#case-study)
-  - [Supplier Financial Data Analysis](#about-tickets-issued-dataset)
-    - [Financial Data ETL](#background-of-organization)
-    - [Financial Data Search](#financial-data-search)
-	    - [Proposal 1: Financial Data API](#financial-data-api)
-	    - [Proposal 2: Web Crawler ](#web-crawler)
-	- [Suppliers Profiling and Scoring](#profiling-and-scoring)
-  - [Sentiment Analysis for ABC International](#sentiment-analysis)
-    - [News Feed API](#news-feed-api)
-    - [News Text Data ETL](#news-text-data-etl)
-    - [Sentiment Analysis](#sentiment-analysis)
-      - [Entity Recognition](#entity-recognition)
-      - [Detect Sentiment](#detect-sentiment)
-      - [Intent Matchine](#intent-matching)
-   - [Roadmap](#roadmap)
-	    - [Supplier Assignement Optimization](#supplier-assignment-optimization)
-	    - [Risk Assesment](#risk-assesment)
-  - [References](#references)
+- [Case Study: ABC International](#case-study-abc-international)
+  - [Table of contents](#table-of-contents)
+- [Case Study: ABC International <a name="case-study"></a>](#case-study-abc-international-1)
+  - [Supplier Financial Data Analysis <a name="supplier-financial-data"></a>](#supplier-financial-data-analysis)
+      - [Liquidity](#liquidity)
+      - [Solvency](#solvency)
+      - [Profitability](#profitability)
+  - [Financial Data ETL<a name="background-of-organization"></a>](#financial-data-etl)
+    - [Services Provided by Organization <a name="OrgServices"></a>](#services-provided-by-organization)
+    - [Dataset Info. <a name="DatasetInfo"></a>](#dataset-info)
+    - [Structure of Dataset <a name="DataSetStructure"></a>](#structure-of-dataset)
+  - [Data Wrangling <a name="datawrangling"></a>](#data-wrangling)
+      - [Challenges in the dataset](#challenges-in-the-dataset)
+    - [Gathering Data <a name="gatherdata"></a>](#gathering-data)
+      - [Challenges](#challenges)
+  - [Data Exploration Results <a name="exploration"></a>](#data-exploration-results)
+    - [Data Walkthrough <a name="exploration_walkthrough"></a>](#data-walkthrough)
+    - [Defining scope of the data analysis, so adjust and clean the data accordingly <a name="scopeandclean"></a>](#defining-scope-of-the-data-analysis-so-adjust-and-clean-the-data-accordingly)
+      - [Scope of the Data Exploration](#scope-of-the-data-exploration)
+      - [Certain Data changes](#certain-data-changes)
+    - [Analysis of various characteristics of dataset <a name="characteristicsanalysis"></a>](#analysis-of-various-characteristics-of-dataset)
+    - [Analysis of impact of various characteristics of dataset on number tickets sale <a name="ticketsaleanalysis"></a>](#analysis-of-impact-of-various-characteristics-of-dataset-on-number-tickets-sale)
+  - [How to run this project <a name="run"></a>](#how-to-run-this-project)
 
-## About Tickets Issued Dataset <a name="AboutTicketData"></a>
+# Case Study: ABC International <a name="case-study"></a>
 
-This dataset is issued by organization KSRTC. It is a State Road Transport Corporation.
+ABC International is a Fortune 500 company with presence in over 60 countries spread across the globe. It is a global conglomerate in true sense. With an annual revenue of over $50 Bn, ABC International figures in the top pharmaceutical companies. Majority of its revenue comes from Germany & USA. The company’s suppliers are largely concentrated in the Austria and China. With the current COVID situation, things became difficult for ABC International. While the company managed to stay afloat with the added pressure on its operations, the same couldn’t be said about its suppliers. The company needed to understand and segment the suppliers based on their liquidity risk.
 
-### BackGround of Organization <a name="OrgBackground"></a>
+## Supplier Financial Data Analysis <a name="supplier-financial-data"></a>
 
-The Karnataka State Road Transport Corporation (KSRTC) is a state-owned road
-transportation company catering to the different cities, towns and villages within and outside Karnataka. The corporation has the largest fleet of Volvo buses among the different state-owned transport companies in India. It is wholly owned by the Government of Karnataka.
+To accurately evaluate the financial health and long-term sustainability of a company, a number of financial metrics must be considered. Four main areas of financial health that should be examined are below.
+ #### Liquidity
+ Liquidity is the amount of cash and easily-convertible-to-cash assets a company owns to manage its short-term debt obligations.
+ Following are the ratios, generally being used to understand liquidity power of a company
+ 
+
+ - Current Ratio: Current Assets / Current Liabilities
+ - Quick Ratio:  Current Assets (excluding inventory) / Current Liabilities
+
+ #### Solvency
+ Solvency is a company's ability to meet its debt obligations on an ongoing basis, not just over the short term. To evaluate solvency following is the ratio.
+ 
+Debt/Equity ratio = Total Liabilities​ / Total Shareholders’ Equity
+#### Profitability
+The best metric for evaluating profitability is [net margin](https://www.investopedia.com/terms/n/net_margin.asp), the ratio of profits to total revenues.
+
+## Financial Data ETL<a name="background-of-organization"></a>
+
+![AWS Financial Data Extraction and Load](https://github.com/vaibhavmaurya/abc-case-study/blob/master/images/FiancialDataETL.png)
+
+
+
 
 ### Services Provided by Organization <a name="OrgServices"></a>
 Services covers 92% villages in Karnataka. KSRTC operates with a total fleet of 23829 buses (KSRTC-8348, NEKRTC-4343, NWKRTC-4716, and BMTC–6422). It transports, on an average, 74.57 lakh passengers per day. It also operates to the neighbouring states of Maharashtra, Andhra Pradesh, Telangana, Tamil Nadu, Puducherry, Goa and Kerala. KSRTC was the first state transport corporation to introduce Volvo B7RLE low floor city buses in India in 2005. At present, KSRTC operates TATA, Ashok Leyland, Eicher Motors are More, Also Volvo, Mercedes Benz, Scania buses under the A/C (Airavat) services (Airavat means the mythical white elephant in Kannada).
@@ -206,3 +231,5 @@ Following are the jupyter notebooks html version.
 
 - [Data Wrangling and Data exploration](https://github.com/vaibhavmaurya/BusAndTicketsOptimization/blob/master/notebooks/Data_Wrangling.slides.html)
 - [Data Analysis with visulaization](https://github.com/vaibhavmaurya/BusAndTicketsOptimization/blob/master/notebooks/PassengersDistributionAnalysis.slides.html)
+
+
