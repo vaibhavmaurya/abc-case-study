@@ -1,3 +1,6 @@
+
+# Table of contents
+- [Table of contents](#table-of-contents)
 - [Case Study: ABC International <a name="case-study"></a>](#case-study-abc-international)
   - [Supplier Financial Data Analysis <a name="supplier-financial-data"></a>](#supplier-financial-data-analysis)
       - [Liquidity](#liquidity)
