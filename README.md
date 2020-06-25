@@ -1,10 +1,4 @@
-
-# Case Study: ABC International
-
-## Table of contents
-- [Case Study: ABC International](#case-study-abc-international)
-  - [Table of contents](#table-of-contents)
-- [Case Study: ABC International <a name="case-study"></a>](#case-study-abc-international-1)
+- [Case Study: ABC International <a name="case-study"></a>](#case-study-abc-international)
   - [Supplier Financial Data Analysis <a name="supplier-financial-data"></a>](#supplier-financial-data-analysis)
       - [Liquidity](#liquidity)
       - [Solvency](#solvency)
