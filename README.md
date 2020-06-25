@@ -66,23 +66,23 @@ supplierId STRING, FinancialReportDate  Date, netMargin Decimal, currentRatio  D
 
 ### Financial Data API<a name="financial-data-api"></a>
 Following is the API can bes used to extract the Financial Ratios for a company.
- - [Financial Ratios API]([https://financialmodelingprep.com/developer/docs/financial-ratio-free-api/](https://financialmodelingprep.com/developer/docs/financial-ratio-free-api/))
- - [Financial Data API Doc]([https://financialmodelingprep.com/developer/docs/](https://financialmodelingprep.com/developer/docs/))
+ - [Financial Ratios API](https://financialmodelingprep.com/developer/docs/financial-ratio-free-api/)
+ - [Financial Data API Doc](https://financialmodelingprep.com/developer/docs/)
 
 Some additional public rest APIs to extract financial data are below.
- - [EOD Historical Data]([https://eodhistoricaldata.com/?gclid=CjwKCAjw88v3BRBFEiwApwLeveHx3vXgJffrP7KSfAlsSTmLtUmbYV4ODzp4YxE5lIh93eeb_wk9qhoCwQUQAvD_BwE](https://eodhistoricaldata.com/?gclid=CjwKCAjw88v3BRBFEiwApwLeveHx3vXgJffrP7KSfAlsSTmLtUmbYV4ODzp4YxE5lIh93eeb_wk9qhoCwQUQAvD_BwE))
- - [Xignit]([https://www.xignite.com/product/factset-fundamentals-financials#/DeveloperResources/Request/GetFinancialStatements](https://www.xignite.com/product/factset-fundamentals-financials#/DeveloperResources/Request/GetFinancialStatements))
+ - [EOD Historical Data](https://eodhistoricaldata.com/?gclid=CjwKCAjw88v3BRBFEiwApwLeveHx3vXgJffrP7KSfAlsSTmLtUmbYV4ODzp4YxE5lIh93eeb_wk9qhoCwQUQAvD_BwE)
+ - [Xignit](https://www.xignite.com/product/factset-fundamentals-financials#/DeveloperResources/Request/GetFinancialStatements)
 
 ### Web Crawler <a name="web-crawler"></a>
-Another way to extract financial data is from websites like [MoneyControl]([https://www.moneycontrol.com/financials/cityonlineservices/ratiosVI/COS%23COS](https://www.moneycontrol.com/financials/cityonlineservices/ratiosVI/COS%23COS)).
+Another way to extract financial data is from websites like [MoneyControl](https://www.moneycontrol.com/financials/cityonlineservices/ratiosVI/COS%23COS).
 In this approach an API needs to be created in python.
 
 ### Suppliers Profiling and Scoring<a name="profiling-and-scoring"></a>
 
 ![profiling](https://github.com/vaibhavmaurya/abc-case-study/blob/master/images/profiling.png)
 The extracted ratios are different criterias to be evaluated for a supplier. There should be a mechanism to calculate the score combining all these criterias and give relative efficiency score.
-One way to do that is [Analytic Hierarchy Process]([https://www.pmi.org/learning/library/analytic-hierarchy-process-prioritize-projects-6608#:~:text=The%20multi%2Dcriteria%20programming%20made,the%201970s%20by%20Thomas%20L.](https://www.pmi.org/learning/library/analytic-hierarchy-process-prioritize-projects-6608#:~:text=The%20multi%2Dcriteria%20programming%20made,the%201970s%20by%20Thomas%20L.)).
-Before AHP financial ratio data of all the suppliers need to be transformed, which can be done with [Business Rule Engine]([https://github.com/venmo/business-rules](https://github.com/venmo/business-rules)). Following is the mechanism for profiling and scoring.
+One way to do that is [Analytic Hierarchy Process](https://www.pmi.org/learning/library/analytic-hierarchy-process-prioritize-projects-6608#:~:text=The%20multi%2Dcriteria%20programming%20made,the%201970s%20by%20Thomas%20L.).
+Before AHP financial ratio data of all the suppliers need to be transformed, which can be done with [Business Rule Engine](https://github.com/venmo/business-rules). Following is the mechanism for profiling and scoring.
 1. As soon data is updated to the S3 bucket (Financial data), it triggers Lambda function.
 2. Lambda function calls AHP algorithm deployed in the ECS container service.
 3. ECS container application generates the scores and push it to Simple Notification Service, which can be subscribed by any email service or mobile app and to S3 bucket.
